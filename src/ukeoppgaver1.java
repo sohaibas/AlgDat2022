@@ -7,12 +7,27 @@ public class ukeoppgaver1 {
         int min_index = min(a);
 
         System.out.println(min_index);
+        System.out.println(a[min_index]);
     }
 
 
     static int min(int[] a) {
-        int min_value = 0;
+        //Initialisere med første element
+        int min_value = a[0];
         int min_index = 0;
+
+        //Loop over alle resterende elementer og sjekk om vi finner
+        //et mindre tall.
+        for (int i=1; i < a.length; i++) {
+            int value = a[i];
+            int index = i;
+
+            //Sjekk om verdien er mindre enn det vi har sett tidligere.
+            if (value < min_value) {
+                min_value = value;
+                min_index = index;
+            }
+        }
 
         return min_index;
     }
